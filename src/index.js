@@ -1,8 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import store from './store.js';
+import { addToCart }  from './actions/cart-actions';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+console.log("initial state: ", store.getState());
+
+let unSubscribe = store.subscribe(() =>
+    console.log(store.getState())
+);
+
+store.dispatch(addToCart('Coffee 500gm', 1, 250));
+store.dispatch(addToCart('Flour 1kg', 2, 110));
+store.dispatch(addToCart('Juice 2L', 1, 250));
+
+unSubscribe();
