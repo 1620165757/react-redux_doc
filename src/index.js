@@ -1,14 +1,15 @@
-import store from './store.js';
-import { addToCart }  from './actions/cart-actions';
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import todoApp from './reducers'
+import App from './components/App'
 
-console.log("initial state: ", store.getState());
+let store = createStore(todoApp);
 
-let unsubscribe = store.subscribe(() =>
-    console.log(store.getState())
+render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
 );
-
-store.dispatch(addToCart('Coffee 500gm', 1, 250));
-// store.dispatch(addToCart('Flour 1kg', 2, 110));
-// store.dispatch(addToCart('Juice 2L', 1, 250));
-
-unsubscribe();
