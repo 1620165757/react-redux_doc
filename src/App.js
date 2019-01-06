@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import GoodsList from "./GoodsList";
+import React from 'react';
+import Main from "./view/main";
+import store from "./store";
+import Provider from "react-redux/es/components/Provider";
 
 export const App = () => (
-    <div>
-        <h2>Shopping Cart Example</h2>
-        <hr/>
-        <GoodsList/>
-    </div>
+    <Provider store={store}>
+        <Main/>
+    </Provider>
 );
