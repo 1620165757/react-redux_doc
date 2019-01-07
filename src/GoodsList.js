@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect} from "react-redux";
 
-const GoodsList = ({products, addToCart}) => {
-    console.log(products.products);
+const GoodsList = (data) => {
+    console.log('GoodsList', data);
+    let goodsList = data.main.goodsList;
     return (
-        products.products.length > 0 ? products.products.map((item, idx) => (
+        goodsList.length > 0 ? goodsList.map((item, idx) => (
             <li key={idx}>{item}</li>
         )) : <div>111</div>
     )
