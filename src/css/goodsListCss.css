@@ -1,0 +1,29 @@
+.goods-item {
+    height: 40px;
+    background: #eeeeee;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.goods-name {
+    height: 40px;
+    line-height: 40px;
+    flex: 1;
+}
+
+.add-to-cart-btn {
+    padding-right: 10px;
+    height: 25px;
+}
+
+.goods-btn {
+    height: 25px;
+}
+
+.btn-group {
+    padding-top: 10px;
+}
