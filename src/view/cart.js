@@ -10,7 +10,7 @@ const Cart = ({main}) => {
             {cartList.length > 0 ? cartList.map((item, idx) => (
                 <div key={idx} className='goods-item'>
                     <div className='goods-name'>{item}</div>
-                    <a className='goods-btn' href={null} onClick={() => data.delGoods(item)}>删除</a>
+                    {/*<a className='goods-btn' href={null} onClick={() => data.delGoods(item)}>删除</a>*/}
                 </div>
             )) : null}
         </div>
